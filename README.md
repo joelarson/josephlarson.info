@@ -1,2 +1,2 @@
-# josephlarson.info
+# joslarson.com
 My personal website.
