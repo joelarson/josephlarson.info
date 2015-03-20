@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 from django.db import models
 
 from taggit.managers import TaggableManager
@@ -17,5 +15,5 @@ class Project(models.Model):
     tags = TaggableManager()
     categories = models.ManyToManyField(Category, related_name='projects')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name

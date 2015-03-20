@@ -24,6 +24,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'main', 'templates')]
+
 ALLOWED_HOSTS = []
 
 MEDIA_ROOT = '/Users/brojoe/Development/Python/josephlarson.info/media/'
@@ -39,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'rest_framework',
     'taggit',
     'categories',
     'projects',
@@ -87,3 +90,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny'
+    ],
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     'rest_framework.authentication.BasicAuthentication',
+    # ),
+    'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
+    'PAGINATE_BY': 10,                 # Default to 10
+    'PAGINATE_BY_PARAM': 'page_size',  # Allow client to override, using `?page_size=xxx`.
+    'MAX_PAGINATE_BY': 100             # Maximum limit allowed when using `?page_size=xxx`.
+}
