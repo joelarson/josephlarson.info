@@ -12,6 +12,8 @@ api_router.register(r'project', api.ProjectViewSet)
 urlpatterns = patterns('',
     url(r'^api/', include(api_router.urls)),
     url(r'^projects/$', 'main.views.web.projects', name='projects'),
+    url(r'^thoughts/$', 'main.views.web.thoughts', name='thoughts'),
+    url(r'^about-me/$', 'main.views.web.about_me', name='about-me'),
     url(r'^$', 'main.views.web.activity', name='activity'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^media/(?P<path>.*)$',

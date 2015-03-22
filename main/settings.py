@@ -24,11 +24,11 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'main', 'templates')]
+# TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'main', 'templates')]
 
 ALLOWED_HOSTS = []
 
-MEDIA_ROOT = '/Users/brojoe/Development/Python/josephlarson.info/media/'
+MEDIA_ROOT = '/Users/brojoe/Development/Python/joslarson.com/media/'
 MEDIA_URL = '/media/'
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'rest_framework',
     'taggit',
+    'main',
     'categories',
     'projects',
 )
@@ -90,6 +91,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,

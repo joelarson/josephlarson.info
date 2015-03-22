@@ -1,1 +1,16 @@
 {% extends "_base.html" %}
+{% block extra_js %}
+<script type="text/javascript">
+var view = new ProjectView();
+</script>
+{% endblock %}
+
+{% block content %}
+<button class="filter" data-category="all">All</button>
+{% for category in categories %}
+<button class="filter" data-category="{{category|lower}}">{{category}}</button>
+{% endfor %}
+<ul id="projects">
+    <li rv-each-project="projects">{ project.name }</li>
+</ul>
+{% endblock %}

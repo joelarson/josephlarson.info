@@ -6,6 +6,7 @@ My personal website.
 * Activity(`^$`)
     - Recent Thoughts
     - Featured Projects
+    - Sidebar breif about me with link to full page.
 * Projects(`^projects/$`)
     - All
     - Music
