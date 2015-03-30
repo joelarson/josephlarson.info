@@ -1,3 +1,11 @@
+rivets.configure({
+    // Attribute prefix in templates
+    prefix: 'rv',
+    // Preload templates with initial data on bind
+    preloadData: false,
+    // Root sightglass interface for keypaths
+});
+
 var ProjectView = function() {
     that = this;
 
@@ -9,8 +17,11 @@ var ProjectView = function() {
     };
 
     $(function(){
+        that.binding = rivets.bind($('#projects'), {projects: that.projects.inView});
         $('button.filter').click(function(){
             that.refresh($(this).data('category'));
+            $('button.filter').removeClass('selected');
+            $(this).addClass('selected');
         });
         that.refresh();
     });
@@ -18,28 +29,40 @@ var ProjectView = function() {
 
 ProjectView.prototype.refresh = function(category) {
     that = this;
-    
+
     var params = {
         "page_size": this.pageSize, 
         "category": category == 'all' ? '' : category,
     };
     $.get('/api/project/', params).done(function(data){
-        // clear existing projects in view/buffer
-        while(that.projects.inView.length > 0) {
-            that.projects.inView.pop();
-        }
-        that.projects.nextBuffer = []
+        var $projects = $('#projects');
+        
+        while(that.projects.inView.length > 0) that.projects.inView.pop();
+
         that.projects.nextBuffer = data.results;
         that.nextNextUrl = data.next;
         that.displayNextPage();
+
+        imagesLoaded(projects, function() {
+            $projects.masonry('destroy');
+            $projects.masonry({
+                // options
+                columnWidth: 305,
+                itemSelector: 'article',
+                isFitWidth: true,
+                gutter: 20,
+            });
+            $projects.masonry( 'on', 'layoutComplete', function(msnryInstance, laidOutItems){
+                console.log(laidOutItems);
+            });
+        });
+        that.loadNextPage();
+
     }).fail(function(){
         // TODO
     });
     
-    this.loadNextPage();
 
-    // if(this.binding != undefined) this.binding.unbind();
-    this.binding = rivets.bind($('#projects'), {projects: this.projects.inView});
 };
 
 ProjectView.prototype.loadNextPage = function() {
