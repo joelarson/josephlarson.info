@@ -4,7 +4,7 @@ from django.conf import settings
 import django.views
 
 from api.urls import urlpatterns as api_urlpatterns
-# from main import views
+# from core import views
 
 urlpatterns = [
     # url(r'^$', views.activity, name='activity'),

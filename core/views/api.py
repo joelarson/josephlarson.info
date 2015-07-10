@@ -2,7 +2,7 @@ from rest_framework import viewsets
 from rest_framework.exceptions import NotFound
 import django_filters
 
-from main import serializers
+from core import serializers
 from projects.models import Project
 
 
