@@ -1,8 +1,8 @@
 html { font-size: 62.5%; /*62.5% for pixel-like sizing*/ }
 
-body, html { padding: 0; margin: 0; }
+body, html { padding: 0; margin: 0; height: 100%; }
 
-body { background: #2f2e37; font-size: 1.6rem; margin-top: 11rem; font-family: Lato; color: #424151; }
+body { background: #2f2e37; font-size: 1.6rem; font-family: Lato; color: #424151; padding-top: 11rem; box-sizing: border-box; }
 
 .wrapper { max-width: 96.0rem; margin: auto; padding: 0 3rem }
 
@@ -91,6 +91,7 @@ body > header nav ul {
 body > section { 
     background: #f5f5f5;
     padding: 5rem 0;
+    min-height: 100%;
 }
 
 body > section > .wrapper > header {
@@ -119,7 +120,7 @@ body > footer {
 
 .filters button:not(.selected):hover {
     /*background: hsla(243, 10%, 28%, .05);*/
-    color: hsla(243, 10%, 28%, 9.0);
+    color: hsla(243, 10%, 28%, 0.9);
 }
 
 .filters button:focus {
@@ -161,13 +162,14 @@ body > footer {
     border-radius: 0.2rem;
     box-shadow: 0 0.2rem 0.1rem rgba(0,0,0,.15);
     position: relative;
-    visibility: hidden;
+    /*visibility: hidden;*/
+    -webkit-animation-name: example; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: .4s; /* Chrome, Safari, Opera */
 }
 
 #projects article.loaded {
     visibility: visible;
-    -webkit-animation-name: example; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: .4s; /* Chrome, Safari, Opera */
+
 }
 
 #projects article:nth-child(2n) {

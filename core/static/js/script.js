@@ -34,7 +34,7 @@ ProjectView.prototype.refresh = function(category) {
         "page_size": this.pageSize, 
         "category": category == 'all' ? '' : category,
     };
-    $.get('/api/project/', params).done(function(data){
+    $.get('/api/projects/', params).done(function(data){
         var $projects = $('#projects');
         
         while(that.projects.inView.length > 0) that.projects.inView.pop();

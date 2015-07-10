@@ -1,16 +1,8 @@
 from rest_framework import serializers
 from taggit.models import Tag
 
-from projects.models import Project
-from categories.models import Category
-
-
-class CategorySerializer(serializers.ModelSerializer):
-    def to_representation(self, obj):
-        return obj.name
-
-    class Meta:
-        model = Category
+from .models import Project
+from categories.serializers import CategorySerializer
 
 
 class TagSerializer(serializers.ModelSerializer):
