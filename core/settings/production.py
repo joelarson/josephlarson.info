@@ -1,6 +1,6 @@
 import os
 
-from main.settings.base import *
+from core.settings.base import *
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -21,22 +21,24 @@ DATABASES = {
     }
 }
 
-MEDIA_ROOT = os.path.join(os.environ['DATA_DIR'], 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 INSTALLED_APPS += ()
 
 MIDDLEWARE_CLASSES += ()
 
-DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
+# DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
 
-# The region to connect to when storing files.
-AWS_REGION = os.environ['AWS_REGION']
+DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
-# The AWS access key used to access the storage buckets.
-AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+# # The region to connect to when storing files.
+# AWS_REGION = os.environ['AWS_REGION']
 
-# The AWS secret access key used to access the storage buckets.
-AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+# # The AWS access key used to access the storage buckets.
+# AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
 
-# The S3 bucket used to store uploaded files.
-AWS_S3_BUCKET_NAME = os.environ['AWS_S3_BUCKET_NAME']
+# # The AWS secret access key used to access the storage buckets.
+# AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+
+# # The S3 bucket used to store uploaded files.
+# AWS_S3_BUCKET_NAME = os.environ['AWS_S3_BUCKET_NAME']

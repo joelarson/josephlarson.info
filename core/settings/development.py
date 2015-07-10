@@ -1,6 +1,6 @@
 import os
 
-from main.settings.base import *
+from core.settings.base import *
 
 
 SECRET_KEY = '80^ffqbpia(b4&tyaul@^zmy&^6frt^urd^mg-aud7y6o(s7ve'
@@ -27,7 +27,7 @@ INSTALLED_APPS += ()
 
 MIDDLEWARE_CLASSES += ()
 
-WSGI_APPLICATION = 'main.wsgi.application'
+WSGI_APPLICATION = 'core.wsgi.application'
 
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
