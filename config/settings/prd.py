@@ -1,13 +1,13 @@
 import os
 
-from core.settings.base import *
+from .base import *
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
 try:
     SECRET_KEY = os.environ['DJANGO_SETTINGS_SECRET_KEY']
 except KeyError:
-    print("Please create env variable DJANGO_SETTINGS_SECRET_KEY")
+    print('Please create env variable DJANGO_SETTINGS_SECRET_KEY')
 
 # Database
 DATABASES = {
@@ -23,9 +23,9 @@ DATABASES = {
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-INSTALLED_APPS += ()
+INSTALLED_APPS += []
 
-MIDDLEWARE_CLASSES += ()
+MIDDLEWARE_CLASSES += []
 
 # DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
 

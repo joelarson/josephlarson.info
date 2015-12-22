@@ -2,8 +2,8 @@
 import os
 import sys
 
-if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings.production")
+if __name__ == '__main__':
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.prd')
 
     from django.core.management import execute_from_command_line
 

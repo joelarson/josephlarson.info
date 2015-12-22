@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import Http404
 
-from projects.models import Project
-from categories.models import Category
+from ..models import Project
+from ..models import Category
 
 
 def activity(request):

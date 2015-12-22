@@ -1,9 +1,9 @@
 import os
 
-from core.settings.base import *
+from .base import *
 
 
-SECRET_KEY = '80^ffqbpia(b4&tyaul@^zmy&^6frt^urd^mg-aud7y6o(s7ve'
+SECRET_KEY = 'testing'
 
 DEBUG = True
 TEMPLATE_DEBUG = True
@@ -23,14 +23,14 @@ DATABASES = {
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static', 'media')
 
-INSTALLED_APPS += ()
+INSTALLED_APPS += []
 
-MIDDLEWARE_CLASSES += ()
+MIDDLEWARE_CLASSES += []
 
-WSGI_APPLICATION = 'core.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
-CORS_ORIGIN_WHITELIST = (
+CORS_ORIGIN_WHITELIST = [
     '127.0.0.1:4000',
-)
+]
