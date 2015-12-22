@@ -1,2 +1,2 @@
-# joslarson.com
+# skinny
 My personal website.

@@ -10,10 +10,10 @@ __pycache__
 .DS_Store
 
 /static
+/media
 /.env
 /fabfile.py
 /config/secrets
-/config/hooks
 
 /.sass-cache
 /node_modules
