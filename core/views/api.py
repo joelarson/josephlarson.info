@@ -2,8 +2,8 @@ from rest_framework import viewsets
 from rest_framework.exceptions import NotFound
 import django_filters
 
-from .serializers import CategorySerializer, ProjectSerializer
-from projects.models import Project
+from ..serializers import CategorySerializer, ProjectSerializer
+from ..models import Project
 
 
 class ProjectFilter(django_filters.FilterSet):
@@ -19,4 +19,4 @@ class ProjectViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
     filter_class = ProjectFilter
-    filter_fields = Project._meta.get_all_field_names()
+    filter_fields = [field.name for field in Project._meta.get_fields()]

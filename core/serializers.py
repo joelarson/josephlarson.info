@@ -3,7 +3,6 @@ from rest_framework import serializers
 from taggit.models import Tag
 
 from .models import Project, Category
-from .serializers import CategorySerializer
 
 
 class TagSerializer(serializers.ModelSerializer):
