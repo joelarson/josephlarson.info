@@ -7,52 +7,41 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=yes' />
 
     <title>{% block title %}{{ page_title }} | Joseph Larson{% endblock %}</title>
-    
-    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Source+Code+Pro:200,300|Source+Sans+Pro:300,400,700,400italic,700italic|Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'>    
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
     {% block extra_css %}{% endblock %}
     
-    <script src="{% static 'js/jquery-2.1.3.min.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/rivets.bundled.min.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/masonry.pkgd.min.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}" type="text/javascript"></script>
-    <script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/libs.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/app.js' %}" type="text/javascript"></script>
     {% block extra_js %}{% endblock %}
 </head>
 <body>
     {% block header %}
     <header>
-        <div class="wrapper">
-            <h1 style="background-image: url({% static 'img/logo.svg' %});" title="Joseph Larson"><a href="/">Joseph Larson</a></h1>
-            <nav>
-                {% for nav_item in navigation %}
-                <a href="{{ nav_item.href }}" {% if nav_item.selected %}class="selected"{% endif %}>{{ nav_item.display }}</a>
-                {% endfor %}
-                <button>Connect</button>
-                <ul>
-                    <li class="github">Github</li>
-                    <li class="twitter">Twitter</li>
-                    <li class="youtube">Youtube</li>
-                    <li class="facebook">Facebook</li>
-                </ul>
-            </nav>
-        </div>
+        <h1 title="Joseph Larson"><a href="/">Joseph Larson</a></h1>
+        <nav>
+            {% for nav_item in navigation %}
+            <a href="{{ nav_item.href }}" {% if nav_item.selected %}class="selected"{% endif %}>{{ nav_item.display }}</a>
+            {% endfor %}
+        </nav>
+        <a class="search">Search</a>
     </header>
     {% endblock header %}
     <section>
         <div class="wrapper">
-            <header>
-                {% block page_header %}
-                <h1 class="hidden">{% block pagetitle %}{{ page_title }}{% endblock %}</h1>
-                {% endblock %}
-            </header>
-            {% block content %}{% endblock %}
+            <h1 class="hidden">{% block pagetitle %}{{ page_title }}{% endblock %}</h1>
+            {% block content %}
+            {% endblock %}
             
             {% if debug %}
                 {{ debug_data }}
             {% endif %}
         </div>
-        <footer>
-        </footer>
+    </section>
+    <footer>
+        <div class="wrapper">
+            
+        </div>
+    </footer>
     </body>
 </html>

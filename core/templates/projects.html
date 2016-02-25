@@ -1,51 +1,12 @@
 {% extends "_base.html" %}
 {% block extra_js %}
 <script type="text/javascript">
-var view = new ProjectView();
+// var view = new ProjectView();
 </script>
 {% endblock %}
 
-{% block page_header %}
-{{ block.super }}
-<div class="filters">
-    <button class="filter selected" data-category="all">All</button>
-    {% for category in categories %}
-    <button class="filter" data-category="{{category|lower}}">{{category}}</button>
-    {% endfor %}
-</div>
-{% endblock %}
-
 {% block content %}
+{{ block.super }}
 <div id="projects">
-    <article rv-each-project="projects">
-        <header>
-            <div class="project-categories">
-                <a rv-each-category="project.categories" rv-href="category">{ category }</a>
-            </div>
-            <a rv-href="project.link">
-                <img rv-src="project.image" rv-alt="project.name"/>
-                <h1>{ project.name }</h1>
-            </a>
-        </header>
-        {# <p class="date">{ project.date }</p> #}
-        <p class="description">{ project.description }</p>
-        <footer>
-            <div class="tags">
-                <a rv-each-tag="project.tags" rv-href="tag">#{ tag }</a>
-            </div>
-        </footer>
-    </article>
 </div>
-<div class="hello"></div>
 {% endblock %}
-
-<ul>
-    <li class="class1"></li>
-    <li class="class2"></li>
-    <li class="class3"></li>
-    <li class="class4"></li>
-    <li class="class5"></li>
-    <li class="class6"></li>
-    <li class="class7"></li>
-    <li class="class8"></li>
-</ul>

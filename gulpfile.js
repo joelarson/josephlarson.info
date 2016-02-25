@@ -4,6 +4,7 @@ var gutil = require('gulp-util');
 
 // disables notifier by default, enable with `export ENABLE_NOTIFIER=true`
 if (process.env.ENABLE_NOTIFIER != 'true') process.env.DISABLE_NOTIFIER = 'true';
+process.env.NODE_ENV = 'production';
 var notify = require('gulp-notify');
 // auto reload/stream changes to browser on html/js/css change
 var browserSync = require('browser-sync').create();
@@ -20,10 +21,10 @@ var PATHS = {
         {'src': './assets/scss/**/*.scss', 'dest': './core/static/css/'},
     ],
     'concat': [
-        // {'src': './assets/js/lib/**/*.js', 'dest': './core/static/js/libs.js'},
+        {'src': './assets/js/lib/**/*.js', 'dest': './core/static/js/libs.js'},
     ],
     'copy': [
-        // {'src': './assets/img/**/*', 'dest': './core/static/img/'},
+        {'src': './assets/img/**/*', 'dest': './core/static/img/'},
     ],
     'clean': [
         './core/static/**/*',
@@ -63,6 +64,7 @@ function bundle(watch) {
     var watchify = require('watchify');  // makes browserify way faster by rebuilding only what was changed
     var sourcemaps = require('gulp-sourcemaps');
     var es = require('event-stream');
+    var uglify = require('gulp-uglify');
 
     var subTasks = PATHS.js.map(function(pathPair) {
         var props = {
@@ -83,12 +85,15 @@ function bundle(watch) {
                 .on('error', notify.onError(function (error) {
                     return {title: 'Browserify Error', message: 'JS compilation failed :('};
                 }))
+                // .on('end', browserSync.reload)
                 .pipe(source(pathPair.dest))
                 .pipe(buffer())  // optional, remove if you don't need to buffer file contents
                 .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
                 // Add transformation tasks (e.g. uglify) to the pipeline here.
+                .pipe(uglify())
                 .pipe(sourcemaps.write('.')) // writes .map file
                 .pipe(gulp.dest('.'));
+
         }
 
         b.on('update', rebundle); // on any dep update, runs the bundler
@@ -174,7 +179,7 @@ gulp.task('server', ['watch-html'], function(){
             target: '127.0.0.1:' + DJANGO_PORT,
             // I have no idea why this works, but if you comment it out
             // cas redirects to the internal ip address...
-            reqHeaders: function(config) {},
+            // reqHeaders: function(config) {},
         },
         port: APP_PORT,
         open: false // don't aut open browser
@@ -188,7 +193,7 @@ gulp.task('watch', ['watch-js', 'watch-sass', 'watch-html', 'watch-concat', 'wat
 
 gulp.task('watch-js', function() {
     var sources = [];
-    PATHS.js.forEach(function(pathPair){sources.push(pathPair.src)});
+    PATHS.js.forEach(function(pathPair){sources.push(pathPair.dest)});
     gulp.watch(sources, browserSync.reload);
 
     return bundle(true);
@@ -204,13 +209,13 @@ gulp.task('watch-html', function() {
     gulp.watch('./*/templates/**/*.html').on('change', browserSync.reload);
 });
 
-gulp.task('watch-concat', function() {
+gulp.task('watch-concat', ['concat'], function() {
     var sources = [];
     PATHS.concat.forEach(function(pathPair){sources.push(pathPair.src)});
     gulp.watch(sources, ['concat'], browserSync.reload);
 });
 
-gulp.task('watch-copy', function() {
+gulp.task('watch-copy', ['copy'], function() {
     var sources = [];
     PATHS.copy.forEach(function(pathPair){sources.push(pathPair.src)});
     gulp.watch(sources, ['copy'], browserSync.reload);

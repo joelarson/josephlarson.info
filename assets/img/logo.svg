@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 732 848" enable-background="new 0 0 732 848" xml:space="preserve">
+    <path fill="hsl(243, 10%, 37%)" opacity="0.18" d="M365.5,86L73,255v338l292.5,169L658,593V255L365.5,86z M625,574L365.5,724L106,574V274l259.5-150L625,274,V574z" />
+    <path fill-rule="evenodd" clip-rule="evenodd" fill="hsl(243, 10%, 37%)" d="M433,592.9V270.1l-118.6,205c-44.6,77.3-91.7,125-141.2,142.9,c-46.9,17-101.6,8.6-162.3-24.1v-97.1l26.7,15.4c38.4,22.2,71.6,27,99.8,14.7c28.1-12.4,58.3-46.4,90.3-101.9L433,69.2v-0.1,l12.6-21.9l0,0l0,0l52.4,30l35,20.1l-0.1,1.4v401.7h187.5v5.2v82.4v1.1v3.7H433z" />
+    <linearGradient id="gradient" gradientUnits="userSpaceOnUse" x1="104.579" y1="640.0156" x2="403.6666" y2="26.7951">
+        <stop offset="0" style="stop-color:#000000;stop-opacity:0" />
+        <stop offset="1" style="stop-color:#000000;stop-opacity:0.3" />
+    </linearGradient>
+    <path fill-rule="evenodd" clip-rule="evenodd" fill="url(#gradient)" d="M314.3,475.1c-44.6,77.3-91.7,125-141.2,142.9,c-46.9,17-101.6,8.6-162.3-24.1v-97.1l26.7,15.4c38.4,22.2,71.6,27,99.8,14.7c28.1-12.4,58.3-46.4,90.3-101.9L445.6,47.3L533,97.4" />
+</svg>
