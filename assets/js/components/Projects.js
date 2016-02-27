@@ -1,15 +1,14 @@
 import React from 'react';
 import Masonry from 'react-masonry-component';
-var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 var masonryOptions = {
     transitionDuration: 0,
     isFitWidth: true,
-    gutter: 20,
+    gutter: 15,
     itemSelector: '#masonry .project-card',
-    // animationName: 'card-in',
 }
 
+var projectsLoaded = 0; // alows me to delay enter transition progressively
 
 var Project = React.createClass({
     getInitialState: function () {
@@ -24,21 +23,12 @@ var Project = React.createClass({
         };
     },
     componentDidMount: function () {
+        var index = projectsLoaded++;
         this.setState(this.props.data);
+        // transition in newly mounted projects 70ms apart
         setTimeout(function () {
             React.findDOMNode(this).classList.add('enter');
-        }.bind(this), this.props.index * 70);
-    },
-    handleClickP: function () {
-        this.setState({
-            'name': 'Blah',
-            'description': 'Test',
-            'image': '',
-            'date': '',
-            'link': 'https://www.google.com',
-            'categories': [],
-            'tags': ['TestTest']
-        });
+        }.bind(this), index * 70);
     },
     render: function () {
         return (
@@ -53,7 +43,7 @@ var Project = React.createClass({
                         </div>
                     </a>
                 </header>
-                <p className="description" onClick={this.handleClickP}>{this.state.description}</p>
+                <p className="description">{this.state.description}</p>
                 <footer>
                     <div className="tags">{this.state.tags.map(function(tag) {
                         return <a key={tag} href={`/tags/${tag}`}>#{tag}</a>;
@@ -93,6 +83,7 @@ var Projects = React.createClass({
         }.bind(this));
     },
     render: function () {
+        projectsLoaded = 0;
         return (
             <div>
                 <Masonry id="masonry" options={masonryOptions} disableImagesLoaded={false}>
@@ -104,7 +95,6 @@ var Projects = React.createClass({
                     </div>
                     {this.state.projects.map(function(project, i) {
                         return <Project key={project.id} index={i} data={project} />;
-                        // return <Project key={`${this.state.category}${project.id}`} index={i} data={project} />;
                     }.bind(this))}
                 </Masonry>
             </div>

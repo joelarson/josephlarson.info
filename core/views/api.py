@@ -16,7 +16,7 @@ class ProjectFilter(django_filters.FilterSet):
 
 class ProjectViewSet(viewsets.ReadOnlyModelViewSet):
     lookup_field = 'slug'
-    queryset = Project.objects.all()
+    queryset = Project.objects.all().order_by('-date');
     serializer_class = ProjectSerializer
     filter_class = ProjectFilter
     filter_fields = [field.name for field in Project._meta.get_fields()]

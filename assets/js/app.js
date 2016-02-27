@@ -4,8 +4,10 @@ import Projects from './components/Projects';
 
 
 $(function() {
-    ReactDOM.render(
-        <Projects source="/api/projects/" />,
-        document.getElementById('projects')
-    );
+    setTimeout(function() {
+        ReactDOM.render(
+            <Projects source="/api/projects/" />,
+            document.getElementById('projects')
+        );
+    }, 2000);
 });
