@@ -33,11 +33,12 @@ var Project = React.createClass({
         }.bind(this), index * 70);
     },
     render: function () {
+        var img = this.state.image ? <img src={this.state.image} alt={this.state.name}/> : null;
         return (
             <article className="project-card">
                 <header>
                     <a href={this.state.link}>
-                        <img src={this.state.image} alt={this.state.name}/>
+                        {img}
                         <h1>{this.state.name}</h1>
                         <div className="release">
                             <p className="date">{this.state.date_verb} {this.state.date}</p>

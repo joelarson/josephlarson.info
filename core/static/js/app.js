@@ -72,6 +72,7 @@ var Project = _react2.default.createClass({
         }.bind(this), index * 70);
     },
     render: function render() {
+        var img = this.state.image ? _react2.default.createElement('img', { src: this.state.image, alt: this.state.name }) : null;
         return _react2.default.createElement(
             'article',
             { className: 'project-card' },
@@ -81,7 +82,7 @@ var Project = _react2.default.createClass({
                 _react2.default.createElement(
                     'a',
                     { href: this.state.link },
-                    _react2.default.createElement('img', { src: this.state.image, alt: this.state.name }),
+                    img,
                     _react2.default.createElement(
                         'h1',
                         null,
