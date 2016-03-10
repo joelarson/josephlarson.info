@@ -100,6 +100,7 @@ TEMPLATES = [
     },
 ]
 
+TAGGIT_CASE_INSENSITIVE = True
 
 #################################
 # REST FRAMEWORK SETTINGS

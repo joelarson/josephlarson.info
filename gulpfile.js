@@ -64,7 +64,7 @@ function bundle(watch) {
     var watchify = require('watchify');  // makes browserify way faster by rebuilding only what was changed
     var sourcemaps = require('gulp-sourcemaps');
     var es = require('event-stream');
-    var uglify = require('gulp-uglify');
+    // var uglify = require('gulp-uglify');
 
     var subTasks = PATHS.js.map(function(pathPair) {
         var props = {
@@ -90,7 +90,7 @@ function bundle(watch) {
                 .pipe(buffer())  // optional, remove if you don't need to buffer file contents
                 .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
                 // Add transformation tasks (e.g. uglify) to the pipeline here.
-                .pipe(uglify())
+                // .pipe(uglify())
                 .pipe(sourcemaps.write('.')) // writes .map file
                 .pipe(gulp.dest('.'));
 

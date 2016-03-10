@@ -16,7 +16,9 @@ var Project = React.createClass({
             'name': '',
             'description': '',
             'image': '',
+            'date_verb': '',
             'date': '',
+            'version': '',
             'link': '',
             'categories': [],
             'tags': []
@@ -38,8 +40,8 @@ var Project = React.createClass({
                         <img src={this.state.image} alt={this.state.name}/>
                         <h1>{this.state.name}</h1>
                         <div className="release">
-                            <p className="date">Released Mar 2010</p>
-                            <p className="version">v2.11.01</p>
+                            <p className="date">{this.state.date_verb} {this.state.date}</p>
+                            <p className="version">{this.state.version}</p>
                         </div>
                     </a>
                 </header>

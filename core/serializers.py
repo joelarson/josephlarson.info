@@ -24,6 +24,7 @@ class CategorySerializer(serializers.ModelSerializer):
 class ProjectSerializer(serializers.ModelSerializer):
     categories = CategorySerializer(many=True)
     tags = TagSerializer(many=True)
+    date = serializers.DateField(format='%b %Y')
 
     class Meta:
         model = Project
@@ -32,7 +33,9 @@ class ProjectSerializer(serializers.ModelSerializer):
             'name',
             'description',
             'image',
+            'date_verb',
             'date',
+            'version',
             'link',
             'categories',
             'tags',
