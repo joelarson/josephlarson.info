@@ -212,14 +212,14 @@ body > section {
 
     header {
         margin: 0 -2rem;
-        display: flex;
-        flex-direction: column;
 
         & > a > :not(img) {
             padding: 0 2rem;
         }
 
         & > a {
+            display: flex;
+            flex-direction: column;
             text-decoration: none;
             color: inherit;
         }
