@@ -211,7 +211,16 @@ body > section {
     -webkit-animation-duration: .4s;
             animation-duration: .4s; }
   .project-card header {
-    margin: 0 -2rem; }
+    margin: 0 -2rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
     .project-card header > a > :not(img) {
       padding: 0 2rem; }
     .project-card header > a {
@@ -221,7 +230,7 @@ body > section {
     font-size: 1.7rem;
     font-weight: 300;
     color: white;
-    margin: 1.6rem 0 0.5rem 0;
+    margin: 2.1rem 0 0.5rem 0;
     line-height: 1.1;
     opacity: .9; }
   .project-card .release {

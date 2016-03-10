@@ -212,6 +212,8 @@ body > section {
 
     header {
         margin: 0 -2rem;
+        display: flex;
+        flex-direction: column;
 
         & > a > :not(img) {
             padding: 0 2rem;
@@ -228,7 +230,7 @@ body > section {
         font-size: 1.7rem;
         font-weight: 300;
         color: $white;
-        margin: 1.6rem 0 0.5rem 0;
+        margin: 2.1rem 0 0.5rem 0;
         line-height: 1.1;
         opacity: .9;
     }
