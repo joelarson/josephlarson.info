@@ -1,15 +1,16 @@
 'use strict';
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-
 // disables notifier by default, enable with `export ENABLE_NOTIFIER=true`
 if (process.env.ENABLE_NOTIFIER != 'true') process.env.DISABLE_NOTIFIER = 'true';
-process.env.NODE_ENV = 'production';
-var notify = require('gulp-notify');
-// auto reload/stream changes to browser on html/js/css change
-var browserSync = require('browser-sync').create();
+
+var gulp = require('gulp');
+var gutil = require('gulp-util');;
+
+var notify = require('gulp-notify');  // get os notifications
+var browserSync = require('browser-sync').create(); // auto reload / stream changes to browser on html/js/css change
 
 
+// django server runs on APP_PORT + 1000 when using browserSync, and puts
+// browserSync on regular port porxying the django server
 var APP_PORT = 8001;
 var DJANGO_PORT = APP_PORT + 1000;
 
@@ -179,7 +180,7 @@ gulp.task('server', ['watch-html'], function(){
             target: '127.0.0.1:' + DJANGO_PORT,
             // I have no idea why this works, but if you comment it out
             // cas redirects to the internal ip address...
-            // reqHeaders: function(config) {},
+            reqHeaders: function(config) {},
         },
         port: APP_PORT,
         open: false // don't aut open browser

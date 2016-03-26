@@ -6,6 +6,7 @@ __pycache__
 .coverage
 *.idx
 *.index
+*.map
 
 .DS_Store
 

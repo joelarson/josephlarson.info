@@ -21,8 +21,6 @@ class Project(models.Model):
     date = models.DateField()
     version = models.CharField(max_length=25, blank=True)
     link = models.TextField(blank=True)
-
-
     tags = TaggableManager()
     categories = models.ManyToManyField(Category, related_name='projects')
 

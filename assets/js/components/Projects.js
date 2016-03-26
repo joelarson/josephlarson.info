@@ -1,16 +1,17 @@
 import React from 'react';
 import Masonry from 'react-masonry-component';
 
-var masonryOptions = {
+
+const masonryOptions = {
     transitionDuration: 0,
     isFitWidth: true,
     gutter: 15,
     itemSelector: '#masonry .project-card',
 }
 
-var projectsLoaded = 0; // alows me to delay enter transition progressively
+let projectsLoaded = 0; // alows me to delay enter transition progressively
 
-var Project = React.createClass({
+const Project = React.createClass({
     getInitialState: function () {
         return {
             'name': '',
@@ -58,7 +59,7 @@ var Project = React.createClass({
 });
 
 
-var Projects = React.createClass({
+const Projects = React.createClass({
     getInitialState: function () {
         return {
             category: 'all',
@@ -104,6 +105,5 @@ var Projects = React.createClass({
         );
     },
 });
-
 
 export default Projects;
