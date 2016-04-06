@@ -1,6 +1,6 @@
 import os
 
-from .base import *
+from .base import *  # noqa
 
 
 # SECURITY WARNING: keep the secret key used in production secret!

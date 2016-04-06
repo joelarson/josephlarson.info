@@ -1,4 +1,0 @@
--r base.txt
-django-s3-storage
-psycopg2
-gunicorn

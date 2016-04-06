@@ -33,8 +33,10 @@ DATABASES = {
 
 ALLOWED_HOSTS = [
     'localhost',
-    '.joslarson.com',
-    '127.0.0.1'
+    '127.0.0.1',
+    'joslarson.dev',
+    'stg.joslarson.com',
+    'joslarson.com',
 ]
 
 MEDIA_URL = '/media/'
@@ -82,9 +84,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': [
-        #     os.path.join(BASE_DIR, 'api', 'templates'),
-        # ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -99,6 +98,9 @@ TEMPLATES = [
         },
     },
 ]
+
+# THIRD-PARTY APP SETTINGS
+# ------------------------------------------------------------------------------
 
 TAGGIT_CASE_INSENSITIVE = True
 
@@ -115,7 +117,6 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
-    'PAGINATE_BY': 50,                 # Default to 10
-    'PAGINATE_BY_PARAM': 'page_size',  # Allow client to override, using `?page_size=xxx`.
-    'MAX_PAGINATE_BY': 1000            # Maximum limit allowed when using `?page_size=xxx`.
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',  # noqa
+    'PAGE_SIZE': 100,
 }
