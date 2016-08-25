@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'taggit',
     'core',
+    'ghostdown'
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -3,8 +3,8 @@ function getRootElementFontSize () {
         document.documentElement).fontSize);
 }
 
-function rems2px(value) {
+export function rems2px(value) {
     return value * getRootElementFontSize();
 }
 
-export default rems2px;
+console.log('utilzzzz');

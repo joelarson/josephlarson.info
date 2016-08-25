@@ -8,5 +8,14 @@
 {% block content %}
 {{ block.super }}
 <div id="projects">
+    {% for project in projects%}
+    <a class="project-list-item" href='{{project.slug}}/'>
+        <header>
+            <h2>{{project.name}}</h2>
+            <p class="release-date">{{project.date_verb}} {{project.date}}</p>
+        </header>
+        <p class="version">{{project.version}}</p>
+    </a>
+    {% endfor %}
 </div>
 {% endblock %}

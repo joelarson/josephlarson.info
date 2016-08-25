@@ -178,6 +178,29 @@ body > section {
     transition: width 0.4s, height 0.4s;
 }
 
+.project-list-item {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: baseline;
+    & + .project-list-item {
+        border-top: solid opacify($text-color-subdued, .01) 1px;
+    }
+
+    header {
+        // width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    & > p {
+        width: 25%;
+        &:last-child {
+            text-align: right;
+        }
+    }
+}
+
 .project-card {
     box-sizing: border-box;
     padding: 0 1.8rem;

@@ -1,13 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Projects from './components/Projects';
+import ReactDom from 'react-dom';
+import * as utils from './utils';
 
+const Sample = ({state}) => {
+    return <h1>{state.text}</h1>
+};
 
-$(function() {
-    setTimeout(function() {
-        ReactDOM.render(
-            <Projects source="/api/projects/" />,
-            document.getElementById('projects')
-        );
-    }, 2000);
-});
+function render () {
+    ReactDom.render(
+        <Sample state={{text: 'Sample'}}/>,
+        document.getElementById('root')
+    );
+}
+render();
+// console.log(utils.rems2px(9));
