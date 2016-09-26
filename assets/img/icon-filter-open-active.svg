@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="30px" viewBox="0 0 44 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40 (33762) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-filter-open-active</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Light" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-filter-open-active">
+            <g id="icon-filter" transform="translate(6.000000, 0.000000)">
+                <g id="Group-6" transform="translate(0.000000, 5.000000)" fill="#6B6967">
+                    <path d="M20.0144618,7.10542736e-15 L0.0748829953,7.10542736e-15 L0.0748829953,2 L20.1319332,2 C20.0452378,1.51308601 20,1.01182593 20,0.5 C20,0.332152603 20.004865,0.165441497 20.0144618,-4.39093206e-14 Z" id="Combined-Shape"></path>
+                    <rect id="Rectangle-4-Copy" x="6.074883" y="9" width="20" height="2"></rect>
+                    <rect id="Rectangle-4-Copy-2" x="12.074883" y="18" width="8" height="2"></rect>
+                </g>
+                <circle id="Oval" fill="#58A677" cx="28.5" cy="5.5" r="5.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

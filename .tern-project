@@ -1,24 +1,36 @@
 {
-  "ecmaVersion": 6,
+  "ecmaVersion": 7,
   "libs": [
-    "browser",
-    "jquery"
+    "browser"
   ],
   "loadEagerly": [
-    "assets/js/app.js"
-  ],
-  "dontLoad": [
-    "assets/js/lib/**/*.js",
-    "core/static/js/**/*.js"
+    "assets/js/**/*.js"
   ],
   "plugins": {
-    "complete_strings": {},
-    "node": {},
-    "requirejs": {},
-    "modules": {},
+    "complete_strings": {
+      "maxLength": 15
+    },
+    "node": {
+      "dontLoad": "",
+      "load": "",
+      "modules": ""
+    },
+    "requirejs": {
+      "baseURL": "",
+      "paths": "",
+      "override": ""
+    },
+    "modules": {
+      "dontLoad": "",
+      "load": "",
+      "modules": ""
+    },
     "es_modules": {},
     "doc_comment": {
-      "fullDocs": true
-    }
+      "fullDocs": true,
+      "strong": false
+    },
+    "node_resolve": {},
+    "commonjs": {}
   }
 }

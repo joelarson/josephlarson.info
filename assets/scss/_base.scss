@@ -1,0 +1,16 @@
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html { font-size: 62.5%; /*62.5% for pixel-like sizing*/ }
+
+body, html { padding: 0; margin: 0; height: 100%; }
+
+body {
+    background: $bg2;
+    font-size: 1.6rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: $fg1;
+    box-sizing: border-box;
+    padding-top: 6.4rem;
+}
