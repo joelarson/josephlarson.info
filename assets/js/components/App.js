@@ -1,15 +1,22 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { Router, browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
+import routes from '../routes';
 
-import MainContainer from '../containers/MainContainer';
 
+const App = ({ store }) => {
+    const history = syncHistoryWithStore(browserHistory, store);
 
-const App = ({ store }) => (
-    <Provider store={store}>
-        <MainContainer state={store.getState()} />
-    </Provider>
-);
-App.propTypes = { store: React.PropTypes.object.isRequired };
+    return (
+        <Provider store={store}>
+            <Router history={history} routes={routes} />
+        </Provider>
+    );
+};
+App.propTypes = {
+    store: React.PropTypes.object.isRequired,
+};
 
 
 export default App;

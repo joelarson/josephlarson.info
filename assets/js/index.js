@@ -9,7 +9,6 @@ import data from './data';
 
 const store = configureStore(data);
 
-
 function render() {
     ReactDom.render(
         <AppContainer>

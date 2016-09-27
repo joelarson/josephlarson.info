@@ -1,7 +1,4 @@
-import * as moment from 'moment';
-
-
-function rootReducer(state = {}, action) {
+export function site(state = {}, action) {
     switch (action.type) {
         case 'TOGGLE_FILTERS_VISIBILITY':
             return { ...state, filtersVisible: !state.filtersVisible };
@@ -11,6 +8,3 @@ function rootReducer(state = {}, action) {
             return state;
     }
 }
-
-
-export default rootReducer;

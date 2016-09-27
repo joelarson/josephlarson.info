@@ -12,18 +12,24 @@ class MainContainer extends Component {
     }
 
     render() {
-        return <Main state={this.props.state} {...this.props.actions} />;
+        return (
+            <Main state={this.props.state} location={this.props.location} {...this.props.actions}>
+                {this.props.children}
+            </Main>
+        );
     }
 }
 
 MainContainer.propTypes = {
     state: React.PropTypes.object.isRequired,
+    location: React.PropTypes.object.isRequired,
+    children: React.PropTypes.element.isRequired,
     dispatch: React.PropTypes.func.isRequired,
     actions: React.PropTypes.object.isRequired,
 };
 
-function mapStateToProps(state) {
-    return { state };
+function mapStateToProps(state, { location }) {
+    return { state, location };
 }
 
 function mapDispatchToProps(dispatch) {

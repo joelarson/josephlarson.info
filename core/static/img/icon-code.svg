@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="20px" height="22px" viewBox="0 0 20 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 40 (33762) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
     <title>icon-code</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Light" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="20" font-family="MaterialIcons-Regular, Material Icons" line-spacing="22" font-weight="normal">
-        <g id="icon-code" fill="#A6A4A3">
-            <text id="code">
-                <tspan x="1" y="20">code</tspan>
-            </text>
+    <g id="Light" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-code">
+            <g id="ic_code_black_24px" transform="translate(1.000000, 1.000000)">
+                <g id="Group">
+                    <polygon id="Shape" points="0 0 20 0 20 20 0 20"></polygon>
+                    <path d="M7.83333333,13.8333333 L4,10 L7.83333333,6.16666667 L6.66666667,5 L1.66666667,10 L6.66666667,15 L7.83333333,13.8333333 L7.83333333,13.8333333 Z M12.1666667,13.8333333 L16,10 L12.1666667,6.16666667 L13.3333333,5 L18.3333333,10 L13.3333333,15 L12.1666667,13.8333333 L12.1666667,13.8333333 Z" id="Shape" fill="#A6A4A2"></path>
+                </g>
+            </g>
         </g>
     </g>
 </svg>

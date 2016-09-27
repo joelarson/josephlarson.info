@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="20px" height="22px" viewBox="0 0 20 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 40 (33762) - http://www.bohemiancoding.com/sketch -->
-    <title>48 - mdpi</title>
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-design</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Light" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="20" font-family="MaterialIcons-Regular, Material Icons" line-spacing="22" font-weight="normal">
-        <g id="48---mdpi" fill="#A6A4A3">
-            <text id="devices">
-                <tspan x="0" y="20">devices</tspan>
-            </text>
+    <g id="Light" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-design">
+            <g id="ic_devices_black_24px" transform="translate(0.000000, 1.000000)">
+                <g id="Group">
+                    <polygon id="Shape" points="0 0 20 0 20 20 0 20"></polygon>
+                    <path d="M3.33333333,5 L18.3333333,5 L18.3333333,3.33333333 L3.33333333,3.33333333 C2.41666667,3.33333333 1.66666667,4.08333333 1.66666667,5 L1.66666667,14.1666667 L0,14.1666667 L0,16.6666667 L11.6666667,16.6666667 L11.6666667,14.1666667 L3.33333333,14.1666667 L3.33333333,5 L3.33333333,5 Z M19.1666667,6.66666667 L14.1666667,6.66666667 C13.7083333,6.66666667 13.3333333,7.04166667 13.3333333,7.5 L13.3333333,15.8333333 C13.3333333,16.2916667 13.7083333,16.6666667 14.1666667,16.6666667 L19.1666667,16.6666667 C19.625,16.6666667 20,16.2916667 20,15.8333333 L20,7.5 C20,7.04166667 19.625,6.66666667 19.1666667,6.66666667 L19.1666667,6.66666667 Z M18.3333333,14.1666667 L15,14.1666667 L15,8.33333333 L18.3333333,8.33333333 L18.3333333,14.1666667 L18.3333333,14.1666667 Z" id="Shape" fill="#A6A4A2"></path>
+                </g>
+            </g>
         </g>
     </g>
 </svg>

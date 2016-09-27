@@ -1,8 +1,9 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { persistState } from 'redux-devtools';
 import thunkMiddleware from 'redux-thunk';
+import { routerReducer } from 'react-router-redux'
 
-import rootReducer from '../reducers';
+import * as reducers from '../reducers';
 
 
 function configureStore(initialState) {
@@ -34,7 +35,8 @@ function configureStore(initialState) {
         enhancer = compose(applyMiddleware(...middlewares));
     }
 
-    const store = createStore(rootReducer, initialState, enhancer);
+    const store = createStore(
+        combineReducers({ ...reducers, routing: routerReducer }), initialState, enhancer);
 
     // Enable Webpack hot module replacement for reducers
     if (module.hot) module.hot.accept('../reducers', () => store.replaceReducer(rootReducer));
