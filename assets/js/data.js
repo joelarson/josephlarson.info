@@ -1,6 +1,6 @@
 export default {
     site: {
-        section: 'activity',
+        navVisible: false,
         category: null,
         filtersVisible: false,
         sections: {

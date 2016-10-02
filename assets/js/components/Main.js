@@ -3,7 +3,7 @@ import React from 'react';
 import Header from './Header';
 
 
-const Main = ({ state, location, onFilterButtonClick, onCategoryChange, children }) => {
+const Main = ({ state, location, onToggleNav, onFilterButtonClick, onCategoryChange, children }) => {
     let section;
 
     switch (location.pathname) {
@@ -26,6 +26,7 @@ const Main = ({ state, location, onFilterButtonClick, onCategoryChange, children
             <Header
                 state={state}
                 section={section}
+                onToggleNav={onToggleNav}
                 onFilterButtonClick={onFilterButtonClick}
                 onCategoryChange={onCategoryChange}
             />

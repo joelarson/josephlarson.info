@@ -1,6 +1,10 @@
 import * as moment from 'moment';
 
 
+export function toggleNav() {
+    return { type: 'TOGGLE_NAV' };
+}
+
 export function toggleFiltersVisibility() {
     return { type: 'TOGGLE_FILTERS_VISIBILITY' };
 }

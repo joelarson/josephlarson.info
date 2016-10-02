@@ -36,6 +36,7 @@ function mapDispatchToProps(dispatch) {
     return {
         dispatch,
         actions: {
+            onToggleNav: () => dispatch(actionCreators.toggleNav()),
             onFilterButtonClick: () => dispatch(actionCreators.toggleFiltersVisibility()),
             onCategoryChange: category => dispatch(actionCreators.setCategory(category)),
         },
