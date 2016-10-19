@@ -8,7 +8,7 @@ import settings from './settings';
 
 export default {
     context: settings.root,
-    debug: process.env.NODE_ENV !== 'production',
+    // debug: process.env.NODE_ENV !== 'production',
     devtool: process.env.NODE_ENV !== 'production' ? '#eval-source-map' : 'source-map',
     entry: {
         ...settings.js.entries.local,
@@ -35,7 +35,7 @@ export default {
         new ForceCaseSensitivityPlugin(),  // OSX wont check but other unix os will
     ],
     resolve: {
-        extensions: ['', '.js', '.jsx'],
+        extensions: ['.js', '.jsx'],
         modules: [
             settings.js.root,  // allows absolute paths from the project root
             'node_modules',
