@@ -54,12 +54,7 @@
                 height: 2.2rem;
                 background-repeat: no-repeat;
                 background-position: center center;
-                a {
-                    display: block;
-                    width: inherit;
-                    height: inherit;
-                    text-indent: -200vw;
-                }
+                text-indent: -200vw;
             }
             li.category-music { background-image: url('../img/icon-music.svg'); }
             li.category-code { background-image: url('../img/icon-code.svg'); }

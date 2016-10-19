@@ -3,41 +3,25 @@ import React from 'react';
 import Header from './Header';
 
 
-const Main = ({ state, location, onToggleNav, onFilterButtonClick, onCategoryChange, children }) => {
-    let section;
-
-    switch (location.pathname) {
-        case '/':
-            section = 'activity';
-            break;
-        case '/projects/':
-            section = 'projects';
-            break;
-        case '/thoughts/':
-            section = 'thoughts';
-            break;
-        default:
-            section = '404';
-            break;
-    }
-
-    return (
-        <div>
-            <Header
-                state={state}
-                section={section}
-                onToggleNav={onToggleNav}
-                onFilterButtonClick={onFilterButtonClick}
-                onCategoryChange={onCategoryChange}
-            />
-            {children}
-        </div>
-    );
-};
+const Main = ({
+    state,
+    onToggleNav, onFilterButtonClick, onCategoryChange,
+    children,
+}) => (
+    <div>
+        <Header
+            state={state}
+            onToggleNav={onToggleNav}
+            onFilterButtonClick={onFilterButtonClick}
+            onCategoryChange={onCategoryChange}
+        />
+        {children}
+    </div>
+);
 
 Main.propTypes = {
     state: React.PropTypes.object.isRequired,
-    location: React.PropTypes.object.isRequired,
+    onToggleNav: React.PropTypes.func.isRequired,
     onFilterButtonClick: React.PropTypes.func.isRequired,
     onCategoryChange: React.PropTypes.func.isRequired,
     children: React.PropTypes.element.isRequired,

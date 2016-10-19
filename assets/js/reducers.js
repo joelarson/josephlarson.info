@@ -6,9 +6,24 @@ export function site(state = {}, action) {
             return { ...state, filtersVisible: !state.filtersVisible };
         case 'SET_CATEGORY':
             return { ...state, filtersVisible: false, category: action.category };
-        case '@@router/LOCATION_CHANGE':
-            return { ...state, navVisible: false, filtersVisible: false };
-        default:
+        case '@@router/LOCATION_CHANGE': {
+            let section;
+            switch (location.pathname) {
+                case '/':
+                    section = 'activity';
+                    break;
+                case '/projects/':
+                    section = 'projects';
+                    break;
+                case '/thoughts/':
+                    section = 'thoughts';
+                    break;
+                default:
+                    section = '404';
+                    break;
+            }
+            return { ...state, section, navVisible: false, filtersVisible: false };
+        } default:
             return state;
     }
 }

@@ -17,12 +17,11 @@ const Projects = ({ state }) => {
                         <h1><Link to="/">{project.title}</Link></h1>
                         <ul className="categories">
                             {project.categories.map(category => (
-                                <li key={category} className={`category-${category}`}>
-                                    <a
-                                        href={`/categories/${category}/`}
-                                        title={category}
-                                    >{category}</a>
-                                </li>
+                                <li
+                                    key={category}
+                                    className={`category-${category}`}
+                                    title={category}
+                                >{category}</li>
                             ))}
                         </ul>
                     </header>

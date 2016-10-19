@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-const Header = ({ state, section, onToggleNav, onFilterButtonClick, onCategoryChange }) => (
+const Header = ({ state, onToggleNav, onFilterButtonClick, onCategoryChange }) => (
     <header className="main-header">
         <h1 onClick={onToggleNav} className={state.site.navVisible ? 'open' : ''} >
-            {state.site.sections[section].title}
+            {state.site.sections[state.site.section].title}
         </h1>
-        {state.site.navVisible && <nav>
+        <nav className={state.site.navVisible ? 'main active' : 'main'}>
             <Link to="/">Activity</Link>
             <Link to="/projects/">Projects</Link>
             <Link to="/thoughts/">Thoughts</Link>
             <Link to="/about-me/">About Me</Link>
-        </nav>}
+        </nav>
         <button
             className={(() => {
                 const classes = ['filter-btn'];
@@ -51,7 +51,6 @@ const Header = ({ state, section, onToggleNav, onFilterButtonClick, onCategoryCh
 
 Header.propTypes = {
     state: React.PropTypes.object.isRequired,
-    section: React.PropTypes.string.isRequired,
     onToggleNav: React.PropTypes.func.isRequired,
     onFilterButtonClick: React.PropTypes.func.isRequired,
     onCategoryChange: React.PropTypes.func.isRequired,
