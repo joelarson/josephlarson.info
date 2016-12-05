@@ -7,10 +7,22 @@ const Header = ({ state, onToggleNav, onFilterButtonClick, onCategoryChange }) =
             {state.site.sections[state.site.section].title}
         </h1>
         <nav className={state.site.navVisible ? 'main active' : 'main'}>
-            <Link to="/">Activity</Link>
-            <Link to="/projects/">Projects</Link>
-            <Link to="/thoughts/">Thoughts</Link>
-            <Link to="/about-me/">About Me</Link>
+            <Link
+                to="/"
+                className={state.site.section === 'activity' ? 'active' : ''}
+            >Activity</Link>
+            <Link
+                to="/projects/"
+                className={state.site.section === 'projects' ? 'active' : ''}
+            >Projects</Link>
+            <Link
+                to="/thoughts/"
+                className={state.site.section === 'thoughts' ? 'active' : ''}
+            >Thoughts</Link>
+            <Link
+                to="/about-me/"
+                className={state.site.section === 'about-me' ? 'active' : ''}
+            >About Me</Link>
         </nav>
         <button
             className={(() => {

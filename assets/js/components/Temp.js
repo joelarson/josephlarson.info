@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router';
 
 
-const Temp = ({ children }) => (
+const Temp = () => (
     <section className="projects">
         <article>
-            Welcome to root! <br/>
+            Welcome to root! <br />
             <Link to="/projects/">View Projects</Link>
         </article>
     </section>

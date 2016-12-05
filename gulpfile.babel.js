@@ -1,8 +1,8 @@
-// to modify task settings, see config/gulp/settings.js
+// to modify task settings, see config/frontend/settings.js
 import gulp from 'gulp';
 
-import settings from './config/gulp/settings';
-import * as tasks from './config/gulp/tasks';
+import settings from './config/frontend/settings';
+import * as tasks from './config/frontend/tasks';
 
 
 // /////////////////////////////

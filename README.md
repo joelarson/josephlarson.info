@@ -38,3 +38,16 @@ src/
         UserProfile.js
         UserAvatar.js
         reducer.js
+
+
+## minimal
+
+* js transpiler        babel or typescript
+* js bundler           webpack or rollup
+* js sourcemaps        ????
+* js uglify            ????
+* sass compiler        sass
+* css autoprefixer     ????
+* css sourcemaps       sass
+* source copy
+* source concat

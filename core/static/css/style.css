@@ -17,6 +17,17 @@ body {
   color: #676665;
   box-sizing: border-box;
   padding-top: 6.4rem; }
+  @media (min-width: 850px) {
+    body {
+      padding-top: 11.4rem; } }
+
+#root > div[data-reactroot] {
+  background: #F5F4F2; }
+  @media (min-width: 850px) {
+    #root > div[data-reactroot] {
+      padding: 5rem; } }
+  #root > div[data-reactroot] > * {
+    margin: auto; }
 
 .main-header {
   display: -webkit-box;
@@ -34,6 +45,10 @@ body {
   top: 0;
   left: 0;
   right: 0; }
+  @media (min-width: 850px) {
+    .main-header {
+      height: auto;
+      padding: 2.5rem; } }
   .main-header button {
     background: none;
     border: none;
@@ -66,6 +81,9 @@ body {
     cursor: pointer; }
     .main-header h1:hover, .main-header h1:active, .main-header h1.open {
       background-color: #E3E1DC; }
+    @media (min-width: 850px) {
+      .main-header h1 {
+        display: none; } }
   .main-header nav {
     position: absolute;
     left: 0;
@@ -74,11 +92,53 @@ body {
     min-width: 18rem;
     padding: 1rem;
     background-color: #E3E1DC;
-    display: none; }
+    display: none;
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
     .main-header nav.active {
       display: block; }
     .main-header nav a {
-      display: block; }
+      display: block;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #8d8d8b; }
+    @media (min-width: 850px) {
+      .main-header nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        position: static;
+        height: auto;
+        padding: 0;
+        min-width: unset;
+        background: none;
+        font-family: 'Source Code Pro', monospace;
+        font-size: 1.95rem; }
+        .main-header nav a {
+          box-sizing: border-box;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          height: 4.8rem;
+          padding: 0 1.6rem;
+          border: 1px solid transparent;
+          border-radius: 0.2rem; }
+          .main-header nav a + a {
+            margin-left: 0.8rem; }
+          .main-header nav a.active {
+            border-color: #8d8d8b;
+            color: #6B6967; }
+          .main-header nav a:not(.active):hover {
+            border-color: rgba(141, 141, 139, 0.25);
+            color: #6B6967; } }
   .main-header .filter-btn {
     width: 6.5rem;
     margin-left: 2.0rem;
@@ -87,7 +147,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat; }
     .main-header .filter-btn.active {
-      background-image: url(../img/icon-filter-active.svg); }
+      background-image: url(../img/icon-filter-open-active.svg); }
     .main-header .filter-btn:hover, .main-header .filter-btn.open {
       background-image: url(../img/icon-filter-open.svg); }
       .main-header .filter-btn:hover.active, .main-header .filter-btn.open.active {
@@ -137,11 +197,12 @@ ul.filters {
 .projects {
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
-  background: #F5F4F2; }
+  background: #F5F4F2;
+  max-width: 850px; }
 
 .project {
   margin: 0 0.8rem;
-  padding: 1.3rem 1.6rem 1.6rem; }
+  padding: 1.6rem 1.6rem 1.3rem; }
   .project + .project {
     border-top: 1px solid #E8E7E3; }
   .project header {
@@ -155,6 +216,10 @@ ul.filters {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between; }
+    @media (min-width: 850px) {
+      .project header {
+        font-size: 2.4rem;
+        line-height: 2.4rem; } }
     .project header h1 {
       margin: 0;
       font-size: inherit;
@@ -201,6 +266,10 @@ ul.filters {
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin-bottom: 1.2rem; }
+    @media (min-width: 850px) {
+      .project .subtext {
+        font-size: 1.6rem;
+        line-height: 1.6rem; } }
     .project .subtext .source {
       text-transform: uppercase;
       color: #58A677; }

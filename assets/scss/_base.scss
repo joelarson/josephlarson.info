@@ -13,4 +13,18 @@ body {
     color: $fg1;
     box-sizing: border-box;
     padding-top: 6.4rem;
+
+    @media (min-width: $break-desktop) {
+        padding-top: 11.4rem;
+    }
+}
+
+#root > div[data-reactroot] {
+    background: $bg1;
+    @media (min-width: $break-desktop) {
+        padding: 5rem;
+    }
+    & > * {
+        margin: auto;
+    }
 }
